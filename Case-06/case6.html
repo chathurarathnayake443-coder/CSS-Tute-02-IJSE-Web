@@ -21,10 +21,26 @@
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
+            overflow: hidden;
             position: relative;
         }
 
-        main > section > section:nth-child(1){
+        main > #mainFrame {
+            position: relative;
+            width: 300vw;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            animation: frameAnimation 6000ms ease-in-out infinite;
+            overflow: hidden;
+        }
+
+        main > section > section {
+            position: relative;
+            width: 100vw;
+        }
+
+        .city{
             position: absolute;
             width: 100%;
             height: Calc(100vh / 3);
@@ -32,10 +48,10 @@
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
-            margin-top: 251px;
+            bottom: 33vh;
         }
 
-        main > section > section:nth-child(2){
+        .road{
             width: 100%;
             height: Calc(100vh / 3);
             background-image: url("assets/Car_Animation_Img/road.jpg");
@@ -46,15 +62,66 @@
             bottom: 0;
         }
 
+        main > img {
+            position: absolute;
+            bottom: 140px;
+            left: 40vw;
+            width: Calc(100vh / 2);
+        }
+
+        .wheels{
+            width: 75px;
+            position: absolute;
+            animation: wheelAnimation 6000ms ease-in-out infinite;
+        }
+
+        #wheel1{
+            left: 57vw;
+        }
+
+        #wheel2{
+            left: 42vw;
+        }
+
+        @keyframes frameAnimation {
+            0%{
+                transform: translateX(0);
+            }
+            100%{
+                transform: translateX(-200vw);
+            }
+        }
+
+        @keyframes wheelAnimation {
+            0%{
+                transform: rotate(0);
+            }
+            100%{
+                transform: rotate(3000deg);
+            }
+        }
 
     </style>
 </head>
 <body>
     <main>
-        <section>
-            <section></section>
-            <section></section>
+        <section id="mainFrame">
+            <section class="frame">
+                <section class="city"></section>
+                <section class="road"></section>
+            </section>
+            <section class="frame">
+                <section class="city"></section>
+                <section class="road"></section>
+            </section>
+            <section class="frame">
+                <section class="city"></section>
+                <section class="road"></section>
+            </section>
         </section>
+        <img id="carBody" src="assets/Car_Animation_Img/car.png" alt="car">
+        <img id="wheel1" class="wheels" src="assets/Car_Animation_Img/wheel.png" alt="wheel">
+        <img id="wheel2" class="wheels" src="assets/Car_Animation_Img/wheel.png" alt="wheel">
     </main>
 </body>
 </html>
