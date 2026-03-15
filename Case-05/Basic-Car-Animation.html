@@ -31,7 +31,8 @@
             right: 0;
             margin: auto;
             border: 1px solid black;
-            background:linear-gradient(to right,blueviolet,white,blueviolet);
+            border-radius: 15px;
+            background-color: lightgray;
         }
 
         .wheel{
@@ -39,11 +40,11 @@
             height: 100px;
             border-radius: 50%;
             border-width: 10px;
-            border-top-color: purple;
-            border-bottom-color: purple;
-            border-left-color: navajowhite;
-            border-right-color: navajowhite;
-            background-color: darkgrey;
+            border-top-color: black;
+            border-bottom-color: black;
+            border-left-color: gray;
+            border-right-color: gray;
+            background-color: gainsboro;
             border-style: solid;
             position: absolute;
             animation: wheelAnimation 2s alternate infinite;
@@ -57,6 +58,15 @@
         #wheel2{
             margin-top: 200px;
             margin-left: 300px;
+        }
+
+        img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
         }
 
         @keyframes wheelAnimation {
@@ -81,8 +91,8 @@
 <body>
     <section>
         <div></div>
-        <div id="wheel1" class="wheel"></div>
-        <div id="wheel2" class="wheel"></div>
+        <div id="wheel1" class="wheel"><img src="../assets/Merceds-Benz.png" alt="benzLogo" width="50px"></div>
+        <div id="wheel2" class="wheel"><img src="../assets/Merceds-Benz.png" alt="benzLogo" width="50px"></div>
     </section>
 </body>
 </html>
